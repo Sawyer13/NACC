@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Network Access Control Cybersecurity</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Daniel García Baameiro & Marta Pastor Puente"/>
+    <meta name="keywords" content="Daniel García Baameiro Marta Pastor Puente"/>
+    <link rel="stylesheet" href="assets/css/mainScan.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  </head>
+
+  <body>
+	<div class="menu">
+	    <nav>
+	      <input type="checkbox" id="button">
+	      <label for="button" onclick>
+      		<div class="menuIcon">
+      		  <span></span>
+      		  <span></span>
+      		  <span></span>
+      		</div>
+	      </label>
+
+        <div class="slideMenu">
+  	      <ul>
+        		<li>
+        		    <a href="index.html">
+        		        <img class="logImage" src="images/logo.png">
+        			      <p class="scanText" ><strong>SCAN</strong></p>
+        		    </a>
+        		</li>
+      		  <li>
+      		      <a href="record.html">
+      			        <p><strong>RECORD</strong></p>
+      		      </a>
+      		  </li>
+      		  <li>
+      		      <a href="device.html">
+      			        <p><strong>MY DEVICE</strong></p>
+      		      </a>
+      		  </li>
+            <li>
+                <a href="settings.html">
+                    <p><strong>SETTINGS</strong></p>
+               </a>
+            </li>
+      		  <li>
+      		      <a href="help.html">
+      			        <p><strong>HELP</strong></p>
+      		      </a>
+      		  </li>
+      		  <li>
+      		      <a href="author.html">
+      			        <p><strong>ABOUT ME</strong></p>
+      		      </a>
+      		  </li>
+	      </ul>
+       </div>
+	     <div class="responsive-log"><img src="images/logo.png"></div>
+	    </nav>
+    </div>
+    <div style="width: 100%; height: 400px;"
+    <p id="ip" class="showIPs"><script>
+
+      /*//Import 'fs' y 'path'
+      const { readFile } = require('fs');
+      const { resolve } = require('path');
+
+      //Read file 'ip found' como UTF-8
+      readFile(resolve('./ip.txt'), 'utf8', (error, data) => {
+        if (error) {
+          //Show error on console
+          console.error(error);
+          return error;
+        }
+        //Write content of package.json to .html
+        return document.getElementById('ip').innerHTML=data;
+      })*/
+
+  //Detects device's network mask
+	var nmap = require('node-nmap');
+
+	nmap.nodenmap.nmapLocation = "nmap";
+
+  var fs = require('fs');
+  var rl = require('line-by-line');
+
+  // Looks for all record files in folder
+  var path = "records/";
+  var files = fs.readdirSync(path);
+
+  var lbl = require('line-by-line');
+
+  // Read the content of each file
+  for (var i in files) {
+    var recordPath = "records/" + files[i];
+
+    lr = new lbl(recordPath);
+
+    lr.on('error', function (err) {
+    	// 'err' contains error object
+    });
+
+    lr.on('line', function (line) {
+    	// 'line' contains the current line without the trailing newline character.
+      document.getElementById('ip').innerHTML += line +"</br>";
+
+    });
+
+    lr.on('end', function () {
+    	// All lines are read, file is closed now.
+      document.getElementById('ip').innerHTML += "</br></br>";
+    });
+  }
+
+
+  /*
+  show.once('open', function(fd) {
+    for (var i in data) {
+			host = data[i];
+			document.getElementById('ip').innerHTML+= "<li>"+host["ip"]+"<ul><li>Port: "+host["openPorts"]+"</li><li>Mac: "+host["mac"]+"</li></ul></li>";
+
+      stream.write(host["ip"]+"\tPort: "+host["openPorts"]+"\tMac: "+host["mac"] + "\n");
+      //console.log(JSON.stringify(host));
+		}
+
+    stream.end();
+
+		document.getElementById('ip').innerHTML += "</ul>";
+		//console.log(data);
+		//document.getElementByID(data);
+		//JSON.stringify(j);
+	});
+  */
+
+    </script></p>
+  </div>
+  </body>
+</html>
