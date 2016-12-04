@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Network Access Control Cybersecurity</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Daniel García Baameiro & Marta Pastor Puente"/>
+    <meta name="keywords" content="Daniel García Baameiro Marta Pastor Puente"/>
+    <link rel="stylesheet" href="assets/css/mainScan.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  </head>
+
+  <body>
+	<div class="menu">
+	    <nav>
+	      <input type="checkbox" id="button">
+	      <label for="button" onclick>
+      		<div class="menuIcon">
+      		  <span></span>
+      		  <span></span>
+      		  <span></span>
+      		</div>
+	      </label>
+
+        <div class="slideMenu">
+  	      <ul>
+        		<li>
+        		    <a href="index.html">
+        			      <p class="scanText" ><strong>SCAN</strong></p>
+        		    </a>
+        		</li>
+      		  <li>
+      		      <a href="record.html">
+      			        <p><strong>RECORD</strong></p>
+      		      </a>
+      		  </li>
+      		  <li>
+      		      <a href="device.html">
+      			        <p><strong>MY DEVICE</strong></p>
+      		      </a>
+      		  </li>
+            <li>
+                <a href="settings.html">
+                    <p><strong>SETTINGS</strong></p>
+               </a>
+            </li>
+      		  <li>
+      		      <a href="help.html">
+      			        <p><strong>HELP</strong></p>
+      		      </a>
+      		  </li>
+      		  <li>
+      		      <a href="author.html">
+      			        <p><strong>ABOUT ME</strong></p>
+      		      </a>
+      		  </li>
+	      </ul>
+       </div>
+	    </nav>
+    </div>
+    <div style="width: 100%; height: 400px;">
+      <div align=center>
+        <img id="loading" style="margin-top: 150px" src="images/loading.gif">
+      </div>
+      <p id="ip" class="showIPs"><script>
+
+        /*//Import 'fs' y 'path'
+        const { readFile } = require('fs');
+        const { resolve } = require('path');
+
+        //Read file 'ip found' como UTF-8
+        readFile(resolve('./ip.txt'), 'utf8', (error, data) => {
+          if (error) {
+            //Show error on console
+            console.error(error);
+            return error;
+          }
+          //Write content of package.json to .html
+          return document.getElementById('ip').innerHTML=data;
+        })*/
+
+        // Detects device's network mask
+      	var nmap = require('node-nmap');
+
+      	nmap.nodenmap.nmapLocation = "nmap";
+
+        var interfaces = os.networkInterfaces();
+      	var addresses = [];
+      	for (var k in interfaces) {
+      	    for (var k2 in interfaces[k]) {
+      	        var address = interfaces[k][k2];
+      	        if (address.family === 'IPv4' && !address.internal) {
+      	            addresses.push(address.address);
+      	        }
+      	    }
+      	}
+
+        for each(var alladresses in adresses) {
+          // ip.address returns current IP
+        	var quickscan = new nmap.nodenmap.QuickScan();
+
+          // Quickscan has been successfully completed.
+        	quickscan.on('complete', function(data){
+          	//document.getElementById('ip').innerHTML=JSON.stringify(data);
+        		document.getElementById('ip').innerHTML += "<ul>";
+
+            for (var i in data) {
+        			host = data[i];
+        			document.getElementById('ip').innerHTML+= "<li>"+host["ip"]+"<ul><li>Port: "+host["openPorts"]+"</li><li>Mac: "+host["mac"]+"</li></ul></li>";
+              //console.log(JSON.stringify(host));
+            }
+            document.getElementById('loading').style.display = "none";
+
+        		document.getElementById('ip').innerHTML += "</ul>";
+        		//console.log(data);
+        		//document.getElementByID(data);
+        		//JSON.stringify(j);
+          });
+
+        }
+          // Quickscan got aborted because of some error.
+        	quickscan.on('error', function(error){
+            document.getElementById('ip').innerHTML=error;
+        	 //console.log(error);
+          });
+
+          // Performs a quick scan of a given IP
+          quickscan.startScan();
+
+      </script>
+    </p>
+  </div>
+  </body>
+</html>
