@@ -81,6 +81,7 @@
 
         // Detects device's network mask
       	var nmap = require('node-nmap');
+	var os = require('os');
 
       	nmap.nodenmap.nmapLocation = "nmap";
 
@@ -95,14 +96,19 @@
       	    }
       	}
 
-        for each(var alladresses in adresses) {
+	var ip = addresses[0];
+  	var separation = ip.split(".");
+    	var masc = separation[0]+"."+separation[1]+"."+separation[2]+"."+"1-255";
+
+
+        //for each(var alladresses in addresses) {
           // ip.address returns current IP
-        	var quickscan = new nmap.nodenmap.QuickScan();
+        	var quickscan = new nmap.nodenmap.QuickScan(masc);
 
           // Quickscan has been successfully completed.
         	quickscan.on('complete', function(data){
           	//document.getElementById('ip').innerHTML=JSON.stringify(data);
-        		document.getElementById('ip').innerHTML += "<ul>";
+        	document.getElementById('ip').innerHTML += "<ul>";
 
             for (var i in data) {
         			host = data[i];
@@ -117,7 +123,7 @@
         		//JSON.stringify(j);
           });
 
-        }
+        //}
           // Quickscan got aborted because of some error.
         	quickscan.on('error', function(error){
             document.getElementById('ip').innerHTML=error;
