@@ -21,7 +21,7 @@ var app = express();
 //showmyip
 app.get('/showmyip', function showmyip(req, res){
 	//We tell the user the command to execute
-	res.send('Executing ifconfig...');
+
 
 	//We found our IP
 	var interfaces = os.networkInterfaces();
@@ -34,6 +34,8 @@ app.get('/showmyip', function showmyip(req, res){
 	        }
 	    }
 	}
+
+
 
 	res.send(addresses);
 });
@@ -75,7 +77,7 @@ app.get('/doscanmaclist', function(req, res){
 		console.log(masc);
 
 		//We tell the user the command to execute
-		res.send('Executing nmap -sP '+masc+' ...');
+		//res.send('Executing nmap -sP '+masc+' ...');
 
 		var quickscan = new nmap.nodenmap.QuickScan(masc);
 
@@ -143,7 +145,7 @@ app.get('/doscanfullscan', function(req, res){
     var masc = separation[0]+"."+separation[1]+"."+separation[2]+"."+"1-255";
 
 		//We tell the user the command to execute
-		res.send('Executing nmap -sV '+masc+' ...');
+		//res.send('Executing nmap -sV '+masc+' ...');
 
 		console.log(masc);
 
