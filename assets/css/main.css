@@ -1,0 +1,74 @@
+@charset "UTF-8";@import url(font-awesome.min.css);@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;}
+*{
+  text-decoration: none;
+}
+body{
+  line-height:1;
+  background-color: #00aaff;
+}
+ol, ul{list-style:none;}
+
+.logo{
+  top:50px;
+  display:-moz-flex;
+  display:-webkit-flex;
+  display:-ms-flex;
+  display:flex;
+  -moz-align-items:center;
+  -webkit-align-items:center;
+  -ms-align-items:center;
+  align-items:center;
+  -moz-flex-direction:column;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+}
+
+.logo-padlock{
+  width: 300px;
+  height: 300px;
+}
+
+#main{
+  height: 50px;
+  width: 300px;
+  background:#ffffff;
+  border-radius:4px;
+  cursor:default;
+  opacity:0.95;
+  text-align:center;
+}
+#main h1{
+  font-size:33px;
+  font-family: helvetica;
+  opacity: 1;
+  color: #00aaff;
+  margin-top: 8px;
+}
+
+#wrapper{
+  margin-top: 20px;
+  top:74px;
+  display:-moz-flex;
+  display:-webkit-flex;
+  display:-ms-flex;
+  display:flex;
+  -moz-align-items:center;
+  -webkit-align-items:center;
+  -ms-align-items:center;
+  align-items:center;
+  -moz-justify-content:space-between;
+  -webkit-justify-content:space-between;
+  -ms-justify-content:space-between;
+  justify-content:space-between;
+  -moz-flex-direction:column;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  -moz-perspective:1000px;
+  -webkit-perspective:1000px;
+  -ms-perspective:1000px;
+  perspective:1000px;
+  position:relative;z-index:2;
+}
