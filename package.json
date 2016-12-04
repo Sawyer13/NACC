@@ -1,0 +1,30 @@
+{
+  "name": "NACC",
+  "version": "1.0.0",
+  "description": "Network Access Control Cybersecurity",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "node-nmap": "^3.0.3",
+    "os": "^0.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sawyer13/NACC.git"
+  },
+  "keywords": [
+    "nmap",
+    "network",
+    "control",
+    "cybersecurity"
+  ],
+  "author": "Daniel Garcia Baameiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sawyer13/NACC/issues"
+  },
+  "homepage": "https://github.com/Sawyer13/NACC#readme"
+}
