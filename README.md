@@ -42,9 +42,10 @@ Esta herramienta tiene como finalidad proporcionar al usuario el control total s
 For more detailed information about NACC use and installation, visit our [wiki](https://github.com/Sawyer13/NACC/wiki) page.
 
 ##Credits
-
+Programmer and designer:
 [Daniel García Baameiro](https://es.linkedin.com/in/daniel-garcía-baameiro)
 `https://github.com/Sawyer13`
 
+Person who was giving moral support:
 [Marta Pastor Puente](https://es.linkedin.com/in/marta-pastor-puente)
 `https://github.com/martapastor`
