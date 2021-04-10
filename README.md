@@ -5,7 +5,7 @@ Open source application developed for Cybercamp Hackathon 2016 by LabLab Team.
 
 Esta herramienta tiene como finalidad proporcionar al usuario el control total sobre sus redes personales. Mediante el escaneo de los dispositivos conectados a la red local, buscamos ofrecer a nuestros usuarios una aplicación intuitiva, sencilla y eficiente para la gestión de la seguridad de sus redes.
 
-##Table of Contents
+## Table of Contents
 * [Developer mode](https://github.com/Sawyer13/NACC#developer-mode)
 * [Technology used](https://github.com/Sawyer13/NACC#technology-used)
 * [Features](https://github.com/Sawyer13/NACC#features)
@@ -23,7 +23,7 @@ Esta herramienta tiene como finalidad proporcionar al usuario el control total s
 
 **NOTE**: in order to execute the app through `electron .` command, electron or electron-prebuilt modules must be globally installed (via `npm install electron -g`).
 
-##Technology used
+## Technology used
 
   - [x] Javascript
   - [x] Node.js
@@ -31,17 +31,17 @@ Esta herramienta tiene como finalidad proporcionar al usuario el control total s
   - [x] Electron
   - [x] HTML5/CSS3
 
-##Features
+## Features
 
   - [x] Nmap
   - [x] Shell commands
   - [ ] iOS and Android integration
 
-##More information
+## More information
 
 For more detailed information about NACC use and installation, visit our [wiki](https://github.com/Sawyer13/NACC/wiki) page.
 
-##Credits
+## Credits
 Programmer and designer:
 [Daniel García Baameiro](https://es.linkedin.com/in/daniel-garcía-baameiro)
 `https://github.com/Sawyer13`
